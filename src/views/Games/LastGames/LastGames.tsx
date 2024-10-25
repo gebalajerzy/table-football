@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
-import { Game } from "../../../types/Game.ts";
+import { Game } from "../../../service/game.service.ts";
 import { fetchLastGames } from "../../../service/game.service.ts";
+import LastGamesTable from "../../../components/Games/LastGames/LastGamesTable.tsx";
 import './LastGames.css';
 
 export const LastGames: React.FC = () => {
@@ -19,26 +20,7 @@ export const LastGames: React.FC = () => {
   return (
       <div>
         <h1>Last Games</h1>
-        <table>
-          <thead>
-          <tr>
-            <th>Team A</th>
-            <th>Team B</th>
-            <th>Score Change</th>
-            <th>Date</th>
-          </tr>
-          </thead>
-          <tbody>
-          {games.map((match, index) => (
-              <tr key={index}>
-                <td className={match.winner === 'teamA' ? 'team-winner' : 'team-loser'}>{match.teamA.join(', ')}</td>
-                <td className={match.winner === 'teamB' ? 'team-winner' : 'team-loser'}>{match.teamB.join(', ')}</td>
-                <td>{match.scoreChange}</td>
-                <td>{new Date(match.date).toLocaleDateString()}</td> {/* Format Date */}
-              </tr>
-          ))}
-          </tbody>
-        </table>
+        <LastGamesTable matches={games} />
       </div>
   );
 };
