@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="MavenRunner">
+    <option name="environmentProperties">
+      <map>
+        <entry key="AWS_PROFILE" value="kitopi-developers" />
+        <entry key="AWS_REGION" value="eu-west-1" />
+      </map>
+    </option>
+    <option name="jreName" value="17" />
+  </component>
+  <component name="ProjectRootManager">
+    <output url="file://$PROJECT_DIR$/out" />
+  </component>
+</project>
