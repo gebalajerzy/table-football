@@ -1,8 +1,9 @@
 import './App.css'
-import { AppBar, Box, Button, IconButton, Toolbar, Typography } from '@mui/material';
+import { AppBar, Box, Button, IconButton, Toolbar, Typography, Container } from '@mui/material';
 import MenuIcon from '@mui/icons-material/Menu';
 import { RouterProvider } from 'react-router-dom';
 import { router } from './main.tsx';
+import UserTable from './components/UserTable';
 
 const App = () => {
 
@@ -21,7 +22,7 @@ const App = () => {
               <MenuIcon />
             </IconButton>
             <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
-              Table football rank
+              Table Football Rank
             </Typography>
             <Button color="inherit">Ranking</Button>
             <Button color="inherit">Last Games</Button>
@@ -29,10 +30,17 @@ const App = () => {
             <Button color="inherit">Register</Button>
           </Toolbar>
         </AppBar>
+
+        <Box sx={{ pt: 8 }}>
+          <Container>
+            <UserTable users={users} />
+          </Container>
+        </Box>
+
         <RouterProvider router={router} />
       </Box>
     </>
   )
 }
 
-export default App
+export default App;
