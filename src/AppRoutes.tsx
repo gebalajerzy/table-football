@@ -4,6 +4,7 @@ import { Rank } from './views/Games/Rank/Rank.tsx';
 import { LastGames } from './views/Games/LastGames/LastGames.tsx';
 import { AddMatch } from './views/AddMatch/AddMatch.tsx';
 import { UserRegister } from './views/User/UserRegister/UserRegister.tsx';
+import { UserGames } from "./views/User/UserGames.tsx";
 
 const AppRoutes: FunctionComponent = () => (
     <Routes>
@@ -12,6 +13,7 @@ const AppRoutes: FunctionComponent = () => (
       <Route path={'/last-games'} element={<LastGames />} />
       <Route path={'/add-match'} element={<AddMatch />} />
       <Route path={'/register'} element={<UserRegister />} />
+      <Route path={'/user/:nickname'} element={<UserGames />} />
     </Routes>
 );
 
